@@ -1,0 +1,771 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-29 18:41:47.871489",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "identification_section",
+  "naming_series",
+  "opportunity_from",
+  "party_name",
+  "customer_name",
+  "opportunity",
+  "sales_person",
+  "sub_sales_person",
+  "column_break_ck5uw",
+  "salutation",
+  "first_name",
+  "last_name",
+  "nationality",
+  "column_break_2sknd",
+  "type_of_residence",
+  "marital_status",
+  "gender",
+  "date_of_birth",
+  "column_break_dfzdn",
+  "passport_no",
+  "passport_expiry_date",
+  "emirated_id",
+  "emirates_id_expiry_date",
+  "employment_information_section",
+  "salaried_or_self_employed",
+  "industry_type",
+  "company_type",
+  "column_break_kahbc",
+  "company_full_name",
+  "employer_full_name",
+  "office_in_emirate",
+  "column_break_rqffo",
+  "company_listing",
+  "company_formation_date",
+  "employment_type",
+  "date_of_joining",
+  "designation",
+  "column_break_dgdrc",
+  "role_in_company",
+  "salary_ac_iban",
+  "salary_date",
+  "fixed_monthly_income",
+  "variable_monthly_income",
+  "contact_and_address_section",
+  "home_country_contact",
+  "column_break_wdem5",
+  "work_contact",
+  "work_email",
+  "work_website",
+  "column_break_snyy5",
+  "contact_mobile",
+  "contact_email",
+  "address_section",
+  "uae_residential_address_flat_no",
+  "uae_residential_address_building_name",
+  "uae_residential_address_street_name",
+  "uae_residential_address_makani_no",
+  "uae_residential_address_landmark",
+  "uae_residential_address_city",
+  "uae_residential_address_emirate",
+  "uae_residential_address_po_box_no",
+  "column_break_rwpc2",
+  "work_address_flat_no",
+  "work_address_building_name",
+  "work_address_street_name",
+  "work_address_landmark",
+  "work_address_city",
+  "work_address_emirate",
+  "work_address_po_box_no",
+  "column_break_u1l3m",
+  "home_country_address_flat_no",
+  "home_country_address_building_name",
+  "home_country_address_landmark",
+  "home_country_address_city",
+  "home_country_address_country",
+  "home_country_address_postal_code",
+  "validation_information_section",
+  "uae_vintage",
+  "security_cheque_available",
+  "column_break_hgwmp",
+  "existing_total_credit_card_limit",
+  "existing_total_loans",
+  "column_break_ldea7",
+  "fixed_income",
+  "debt_burden_ratio",
+  "references_section",
+  "uae_reference_full_name",
+  "uae_reference_address",
+  "uae_reference_mobile",
+  "uae_reference_email",
+  "column_break_kuuk3",
+  "home_country_reference_full_name",
+  "home_country_reference_city",
+  "home_country_reference_country",
+  "home_country_reference_mobile",
+  "home_country_reference_email",
+  "credit_card_application_section",
+  "card_type",
+  "card_variant",
+  "column_break_bp8to",
+  "requested_card_limit",
+  "name_on_credit_card",
+  "loan_application_section",
+  "loan_amount",
+  "loan_purpose",
+  "expected_loan_tenor",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pre Screening",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "identification_section",
+   "fieldtype": "Section Break",
+   "label": "Identification"
+  },
+  {
+   "fieldname": "opportunity_from",
+   "fieldtype": "Link",
+   "label": "Opportunity From",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "opportunity_from"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "column_break_ck5uw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "party_name.salutation",
+   "fetch_if_empty": 1,
+   "fieldname": "salutation",
+   "fieldtype": "Link",
+   "label": "Salutation",
+   "options": "Salutation"
+  },
+  {
+   "fetch_from": "party_name.lead_name",
+   "fetch_if_empty": 1,
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_2sknd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "type_of_residence",
+   "fieldtype": "Select",
+   "label": "Type of Residence",
+   "options": "\nShared\nRented\nOwned"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nMarried\nUnmarried"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "column_break_dfzdn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No"
+  },
+  {
+   "fieldname": "passport_expiry_date",
+   "fieldtype": "Date",
+   "label": "Passport Expiry Date"
+  },
+  {
+   "fieldname": "emirated_id",
+   "fieldtype": "Data",
+   "label": "Emirates ID"
+  },
+  {
+   "fieldname": "emirates_id_expiry_date",
+   "fieldtype": "Date",
+   "label": "Emirates ID Expiry Date"
+  },
+  {
+   "fieldname": "employment_information_section",
+   "fieldtype": "Section Break",
+   "label": "Employment Information"
+  },
+  {
+   "fieldname": "salaried_or_self_employed",
+   "fieldtype": "Select",
+   "label": "Salaried or Self Employed",
+   "options": "\nSalaried\nSelf Employed"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "industry_type",
+   "fieldtype": "Link",
+   "label": "Industry Type",
+   "options": "Industry Type"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "label": "Company Type",
+   "options": "\nGovernment Entity\nPrivate Listed Company\nPrivate Unlisted Company"
+  },
+  {
+   "fieldname": "column_break_kahbc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed",
+   "fieldname": "company_full_name",
+   "fieldtype": "Data",
+   "label": "Company Full Name"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "employer_full_name",
+   "fieldtype": "Data",
+   "label": "Employer Full Name"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "office_in_emirate",
+   "fieldtype": "Select",
+   "label": "Office - Emirate",
+   "options": "\nDubai\nAbu Dhabi\nSharjah\nAjman\nUmm Al Quwain\nRas Al-Khaimah\nFujairah"
+  },
+  {
+   "fieldname": "column_break_rqffo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "company_listing",
+   "fieldtype": "Select",
+   "label": "Company Listing",
+   "options": "\nE1\nE2\nE3\nE4\nE-UN"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Self Employed\"",
+   "fieldname": "company_formation_date",
+   "fieldtype": "Date",
+   "label": "Company Formation Date"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "\nPermanent\nContractual"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "column_break_dgdrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Self Employed\"",
+   "fieldname": "role_in_company",
+   "fieldtype": "Select",
+   "label": "Role In Company",
+   "options": "\nProprietor\nPartner\nDirector\nManaging Director"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "salary_ac_iban",
+   "fieldtype": "Data",
+   "label": "Salary A/C IBAN"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "salary_date",
+   "fieldtype": "Date",
+   "label": "Salary Date",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed",
+   "fieldname": "fixed_monthly_income",
+   "fieldtype": "Currency",
+   "label": "Fixed Monthly Income",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.salaried_or_self_employed == \"Salaried\"",
+   "fieldname": "variable_monthly_income",
+   "fieldtype": "Currency",
+   "label": "Variable Monthly Income",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "contact_and_address_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "home_country_contact",
+   "fieldtype": "Data",
+   "label": "Home Country Contact"
+  },
+  {
+   "fieldname": "column_break_wdem5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_contact",
+   "fieldtype": "Data",
+   "label": "Work Contact"
+  },
+  {
+   "fieldname": "work_email",
+   "fieldtype": "Data",
+   "label": "Work Email"
+  },
+  {
+   "fieldname": "work_website",
+   "fieldtype": "Data",
+   "label": "Work Website"
+  },
+  {
+   "fieldname": "column_break_snyy5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_mobile",
+   "fieldtype": "Data",
+   "label": "Contact Mobile"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Email ID"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "uae_residential_address_flat_no",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address Flat No"
+  },
+  {
+   "fieldname": "uae_residential_address_building_name",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address Building Name"
+  },
+  {
+   "fieldname": "uae_residential_address_street_name",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address Street Name"
+  },
+  {
+   "fieldname": "uae_residential_address_makani_no",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address Makani No."
+  },
+  {
+   "fieldname": "uae_residential_address_landmark",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address Nearest Landmark"
+  },
+  {
+   "fieldname": "uae_residential_address_city",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address City"
+  },
+  {
+   "fieldname": "uae_residential_address_emirate",
+   "fieldtype": "Select",
+   "label": "UAE Residential Address Emirate",
+   "options": "\nDubai\nAbu Dhabi\nSharjah\nAjman\nUmm Al Quwain\nRas Al-Khaimah\nFujairah"
+  },
+  {
+   "fieldname": "uae_residential_address_po_box_no",
+   "fieldtype": "Data",
+   "label": "UAE Residential Address PO Box No"
+  },
+  {
+   "fieldname": "column_break_rwpc2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_address_flat_no",
+   "fieldtype": "Data",
+   "label": "Work Address Flat No"
+  },
+  {
+   "fieldname": "work_address_building_name",
+   "fieldtype": "Data",
+   "label": "Work Address Building Name"
+  },
+  {
+   "fieldname": "work_address_street_name",
+   "fieldtype": "Data",
+   "label": "Work Address Street Name"
+  },
+  {
+   "fieldname": "work_address_landmark",
+   "fieldtype": "Data",
+   "label": "Work Address Nearest Landmark"
+  },
+  {
+   "fieldname": "work_address_city",
+   "fieldtype": "Data",
+   "label": "Work Address City"
+  },
+  {
+   "fieldname": "work_address_emirate",
+   "fieldtype": "Select",
+   "label": "Work Address Emirate",
+   "options": "\nDubai\nAbu Dhabi\nSharjah\nAjman\nUmm Al Quwain\nRas Al-Khaimah\nFujairah"
+  },
+  {
+   "fieldname": "work_address_po_box_no",
+   "fieldtype": "Data",
+   "label": "Work Address PO Box No"
+  },
+  {
+   "fieldname": "column_break_u1l3m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "home_country_address_flat_no",
+   "fieldtype": "Data",
+   "label": "Home Country Address Flat No"
+  },
+  {
+   "fieldname": "home_country_address_building_name",
+   "fieldtype": "Data",
+   "label": "Home Country Address Building Name"
+  },
+  {
+   "fieldname": "home_country_address_landmark",
+   "fieldtype": "Data",
+   "label": "Home Country Address Nearest Landmark"
+  },
+  {
+   "fieldname": "home_country_address_city",
+   "fieldtype": "Data",
+   "label": "Home Country Address City"
+  },
+  {
+   "fieldname": "home_country_address_country",
+   "fieldtype": "Link",
+   "label": "Home Country Address Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "home_country_address_postal_code",
+   "fieldtype": "Data",
+   "label": "Home Country Address Postal Code"
+  },
+  {
+   "fieldname": "validation_information_section",
+   "fieldtype": "Section Break",
+   "label": "Validation Information"
+  },
+  {
+   "fieldname": "uae_vintage",
+   "fieldtype": "Float",
+   "label": "UAE Vintage (Months)"
+  },
+  {
+   "fieldname": "fixed_income",
+   "fieldtype": "Float",
+   "label": "Fixed Income",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_hgwmp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "existing_total_credit_card_limit",
+   "fieldtype": "Float",
+   "label": "Existing Total Credit Card Limit",
+   "precision": "2"
+  },
+  {
+   "fieldname": "existing_total_loans",
+   "fieldtype": "Float",
+   "label": "Existing Total Loans",
+   "precision": "2"
+  },
+  {
+   "fieldname": "debt_burden_ratio",
+   "fieldtype": "Float",
+   "label": "Debt-Burden Ratio (DBR%)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "references_section",
+   "fieldtype": "Section Break",
+   "label": "References"
+  },
+  {
+   "fieldname": "uae_reference_full_name",
+   "fieldtype": "Data",
+   "label": "UAE Reference Full Name"
+  },
+  {
+   "fieldname": "uae_reference_address",
+   "fieldtype": "Select",
+   "label": "UAE Reference Residence Emirate",
+   "options": "\nDubai\nAbu Dhabi\nSharjah\nAjman\nUmm Al Quwain\nRas Al-Khaimah\nFujairah"
+  },
+  {
+   "fieldname": "uae_reference_mobile",
+   "fieldtype": "Data",
+   "label": "UAE Reference Mobile No"
+  },
+  {
+   "fieldname": "uae_reference_email",
+   "fieldtype": "Data",
+   "label": "UAE Reference Email Address"
+  },
+  {
+   "fieldname": "column_break_kuuk3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "home_country_reference_full_name",
+   "fieldtype": "Data",
+   "label": "Home Country Reference Full Name"
+  },
+  {
+   "fieldname": "home_country_reference_city",
+   "fieldtype": "Data",
+   "label": "Home Country Reference City"
+  },
+  {
+   "fieldname": "home_country_reference_country",
+   "fieldtype": "Link",
+   "label": "Home Country Reference Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "home_country_reference_mobile",
+   "fieldtype": "Data",
+   "label": "Home Country Reference Mobile No"
+  },
+  {
+   "fieldname": "home_country_reference_email",
+   "fieldtype": "Data",
+   "label": "Home Country Reference Email Address"
+  },
+  {
+   "fieldname": "credit_card_application_section",
+   "fieldtype": "Section Break",
+   "label": "Credit Card Application"
+  },
+  {
+   "fieldname": "card_type",
+   "fieldtype": "Select",
+   "label": "Card Type",
+   "options": "\nMiles Up\nCash Up"
+  },
+  {
+   "fieldname": "card_variant",
+   "fieldtype": "Select",
+   "label": "Card Variant",
+   "options": "\nWorld\nPlatinum\nTitanium"
+  },
+  {
+   "fieldname": "column_break_bp8to",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requested_card_limit",
+   "fieldtype": "Data",
+   "label": "Requested Card Limit"
+  },
+  {
+   "fieldname": "name_on_credit_card",
+   "fieldtype": "Data",
+   "label": "Name on Credit Card"
+  },
+  {
+   "fieldname": "loan_application_section",
+   "fieldtype": "Section Break",
+   "label": "Loan Application"
+  },
+  {
+   "fieldname": "loan_amount",
+   "fieldtype": "Currency",
+   "label": "Requested Loan Amount",
+   "precision": "2"
+  },
+  {
+   "fieldname": "loan_purpose",
+   "fieldtype": "Select",
+   "label": "Loan Purpose",
+   "options": "\nBuy/Renovate Property\nMake Large Purchase\nBuy A Car\nSend Money To Home Country\nMedical Expenses\nEducation\nPay Off Other Debts\nBusiness Expenses\nOthers"
+  },
+  {
+   "fieldname": "expected_loan_tenor",
+   "fieldtype": "Select",
+   "label": "Expected Loan Tenor",
+   "options": "!2 months\n24 months\n36 months\n48 months"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pre Screening",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "security_cheque_available",
+   "fieldtype": "Select",
+   "label": "Security Cheque Available",
+   "options": "\nYes\nNo",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_ldea7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "opportunity",
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "options": "Opportunity",
+   "read_only": 1
+  },
+  {
+   "default": "PS-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PS-",
+   "print_hide": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Team Leader",
+   "options": "Sales Person",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_sales_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "RO",
+   "options": "Sales Person",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-02 18:43:43.296612",
+ "modified_by": "Administrator",
+ "module": "ABZ Custom",
+ "name": "Pre Screening",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name",
+ "track_changes": 1,
+ "track_seen": 1
+}

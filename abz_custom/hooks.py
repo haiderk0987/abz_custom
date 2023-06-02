@@ -7,6 +7,12 @@ app_description = "ABZ Custom"
 app_email = "info@paralogic.io"
 app_license = "MIT"
 
+
+doctype_js = {
+	"Opportunity" : "overrides/opportunity_hooks.js",
+}
+
+
 # Includes in <head>
 # ------------------
 
